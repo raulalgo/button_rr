@@ -37,10 +37,10 @@ class HomePage extends React.Component {
     return (
       <DocumentTitle title="Home">
         <section className="home-page">
-          <Button color="blue" transition="fall"/>
-          <Button color="blue" transition="fall"/>
-          <Button color="blue" transition="fall"/>
-          <Button color="blue" transition="fall"/>
+          <Button color="blue" transition="fall" delay="200"/>
+          <Button color="blue" transition="fall" delay="200"/>
+          <Button color="blue" transition="fall" delay="400"/>
+          <Button color="blue" transition="fall" delay="600"/>
         </section>
       </DocumentTitle>
     );
