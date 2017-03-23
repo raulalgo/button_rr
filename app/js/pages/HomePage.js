@@ -6,6 +6,7 @@ import DocumentTitle from 'react-document-title';
 
 import Button         from '../components/Button'
 import RipplerButton  from '../components/RipplerButton'
+import Rippler        from '../components/Rippler'
 
 const propTypes = {
   currentUser: React.PropTypes.object
@@ -13,10 +14,14 @@ const propTypes = {
 
 class HomePage extends React.Component {
   clicked;
+  t_w_classes;
 
   componentWillMount() {
     //  this.handleClick = this.handleClick.bind(this);
+    //  this.ripplerClick = this.ripplerClick.bind(this);
       this.clicked = false
+
+      this.t_w_classes = "transition_wrapper display_none"
       this.setState ({clicked : this.clicked,
                       x       : 0,
                       y       : 0})
@@ -27,15 +32,22 @@ class HomePage extends React.Component {
   }
 
   render() {
+    console.log("home render");
+    //const t_w_classes = this.t_w_classes
     return (
       <DocumentTitle title="Home">
         <section className="home-page">
-          <Button color="blue" transition="fall" />
-          <RipplerButton color="orange" transition="fall" clicked={this.clicked} onClick={this.handleClick} x={this.state.x} y={this.state.y}/>
-
+          <Button color="blue" transition="fall"/>
+          <Button color="blue" transition="fall"/>
+          <Button color="blue" transition="fall"/>
+          <Button color="blue" transition="fall"/>
         </section>
       </DocumentTitle>
     );
+  }
+
+  ripplerClick(e) {
+
   }
 
   handleClick(e) {
@@ -45,6 +57,9 @@ class HomePage extends React.Component {
     // this.setState({ clicked : this.clicked,
     //                 x       : e.nativeEvent.clientX,
     //                 y       : e.nativeEvent.clientY})
+  }
+
+  componentWillUpdate() {
   }
 }
 

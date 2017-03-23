@@ -13,43 +13,44 @@ class RipplerButton extends React.Component{
     super(props);
     this.handleClick = this.handleClick.bind(this);
 
-    console.log(this.props.color);
-    this.rippleStyle = ({top  : this.props.x,
-                         left : this.props.y});
-    this.flag = false;
-    this.t_w_classes = "transition_wrapper display_none"
-    this.tr_classes = ""
-    //this.setState({clicked : this.props.clicked})
+    //this.state.t_w_classes = "transition_wrapper display_none"
+    //this.state.tr_classes = "";
+
+    this.state = {
+      t_w_classes   : "transition_wrapper display_none",
+      tr_classes    : "transitioner",
+      x             : 0,
+      y             : 0
+    }
+  //  this.flag = false;
+
 
   }
 
   render() {
 
-
-    this.rippleStyle = ({left  : this.props.x-50,
-                         top : this.props.y-50})
-    if(this.flag) {
-      this.t_w_classes ="transition_wrapper";
-    }
-    console.log(this.t_w_classes);
     return (
       <div >
-        <Rippler t_w_classes={this.t_w_classes} tr_classes={this.tr_classes} x={this.props.x} y={this.props.y} />
+        <Rippler x={this.state.x} y={this.state.y} t_w_classes={this.state.t_w_classes} tr_classes={this.state.tr_classes} />
         <Button color={this.props.color} transition={this.props.transition} onClick={this.handleClick}/>
       </div>
     );
   }
 
   handleClick(e) {
-    console.log("clicked: " + this.props.color);
     console.log(e.nativeEvent);
-    
-    // console.log("X: " + e.nativeEvent.clientX);
-    // console.log("Y: " + e.nativeEvent.clientY);
-    // this.setState({ clicked : this.clicked,
-    //                 x       : e.nativeEvent.clientX,
-    //                 y       : e.nativeEvent.clientY})
+    this.setState({
+      t_w_classes   : "transition_wrapper",
+      tr_classes    : "transitioner ripple",
+      x             : e.nativeEvent.clientX,
+      y             : e.nativeEvent.clientY
+    })
+    //
+    // LEVEL MANAGER
+    //
+  }
 
+  componentWillReceiveProps() {
   }
 
   componentWillMount(){
@@ -60,7 +61,6 @@ class RipplerButton extends React.Component{
   }
 
   componentDidUpdate() {
-
   }
 
 }

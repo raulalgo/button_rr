@@ -14,12 +14,16 @@ class Rippler extends React.Component {
                     left  : this.props.x-50})
 
     return (
-      <div className={this.props.t_w_classes}>
-        <div className={'transitioner' + this.props.tr_classes } style={this.style}> </div>
+      <div>
+        <div className={this.props.t_w_classes}>
+          <div className={this.props.tr_classes} style={this.style}> </div>
+        </div>
       </div>
     );
   }
 
+  componentWillUpdate() {
+  }
 }
 
 export default Rippler;
