@@ -7,31 +7,33 @@ class Button extends React.Component {
 
   constructor(props) {
     super(props);
+    this.transitionIn = this.transitionIn.bind(this)
     this.state = {
-        transition  : "",
+        transition  : "display_none",
         show        : false
     }
     //this.transition = this.props.transition
   }
 
   render() {
-    if(this.state.show) {
-      return (
-        <div className={"button wide horizontal " + this.props.color + " " + this.state.transition} onClick={this.props.onClick} ></div>
-      )
-    }
-    else {
-      return(
-        <div></div>
-      );
-    }
+    return (
+         <div className={"button wide horizontal " + this.props.color + " " + this.state.transition} onClick={this.props.onClick} ></div>
+    )
   }
 
   componentWillMount() {
-    var that = this;
-    setTimeout(function(){
-      that.transitionIn();
-    },this.props.delay);
+    if(this.props.hidden){
+
+    } else {
+      var that = this;
+      setTimeout(function(){
+        that.transitionIn();
+      },this.props.delay);
+    }
+  }
+
+  componentWillUpdate() {
+
   }
 
   transitionIn() {

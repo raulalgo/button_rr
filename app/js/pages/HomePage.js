@@ -7,6 +7,7 @@ import DocumentTitle from 'react-document-title';
 import Button         from '../components/Button'
 import RipplerButton  from '../components/RipplerButton'
 import Rippler        from '../components/Rippler'
+import LevelFrame     from '../components/LevelFrame'
 
 const propTypes = {
   currentUser: React.PropTypes.object
@@ -37,10 +38,7 @@ class HomePage extends React.Component {
     return (
       <DocumentTitle title="Home">
         <section className="home-page">
-          <Button color="blue" transition="fall" delay="200"/>
-          <Button color="blue" transition="fall" delay="200"/>
-          <Button color="blue" transition="fall" delay="400"/>
-          <Button color="blue" transition="fall" delay="600"/>
+          <LevelFrame />
         </section>
       </DocumentTitle>
     );
