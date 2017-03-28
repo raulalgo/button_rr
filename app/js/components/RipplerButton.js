@@ -45,6 +45,7 @@ class RipplerButton extends React.Component{
       x             : e.nativeEvent.clientX,
       y             : e.nativeEvent.clientY
     })
+    
     //
     // LEVEL MANAGER
     //

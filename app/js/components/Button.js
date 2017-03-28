@@ -17,7 +17,7 @@ class Button extends React.Component {
 
   render() {
     return (
-         <div className={"button wide horizontal " + this.props.color + " " + this.state.transition} onClick={this.props.onClick} ></div>
+         <div className={"button wide horizontal " + this.props.color + " " + this.state.transition + " " + this.props.extra} onClick={this.props.onClick} ></div>
     )
   }
 
