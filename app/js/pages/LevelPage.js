@@ -9,12 +9,13 @@ import RipplerButton  from '../components/RipplerButton'
 import Rippler        from '../components/Rippler'
 import LevelFrame     from '../components/LevelFrame'
 import LevelOne       from '../components/levels/LevelOne'
+import LevelTwo       from '../components/levels/LevelTwo'
 
 const propTypes = {
   currentUser: React.PropTypes.object
 };
 
-class HomePage extends React.Component {
+class LevelPage extends React.Component {
   clicked;
   t_w_classes;
 
@@ -37,11 +38,11 @@ class HomePage extends React.Component {
     console.log("home render");
     //const t_w_classes = this.t_w_classes
     return (
-      <DocumentTitle title="Home">
-        <section className="home-page">
-          Home Page
+      <DocumentTitle title="Level">
+        <section className="level-page">
           <LevelFrame >
             <LevelOne />
+            <LevelTwo />
           </LevelFrame >
         </section>
       </DocumentTitle>
@@ -65,6 +66,6 @@ class HomePage extends React.Component {
   }
 }
 
-HomePage.propTypes = propTypes;
+LevelPage.propTypes = propTypes;
 
-export default HomePage;
+export default LevelPage;
