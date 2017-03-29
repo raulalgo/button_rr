@@ -3,6 +3,7 @@
 import React          from 'react';
 import Button         from '../Button'
 import RipplerButton  from '../RipplerButton'
+import LevelFrame     from '../LevelFrame'
 
 class LevelOne extends React.Component {
   transition;
@@ -52,10 +53,13 @@ class LevelOne extends React.Component {
       solved  : true,
       extra   : "deactivate"
     });
+    console.log("resolve");
   }
 
   nextLevel() {
-    console.log("say it!");
+    console.log("Next Level");
+    //onsole.log(this.props.message);
+    this.props.newLevel();
   }
 }
 

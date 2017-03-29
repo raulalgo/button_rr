@@ -25,6 +25,8 @@ class LevelPage extends React.Component {
       this.clicked = false
 
       this.t_w_classes = "transition_wrapper display_none"
+      this.newLevel = this.newLevel.bind(this);
+
       this.setState ({clicked : this.clicked,
                       x       : 0,
                       y       : 0})
@@ -63,6 +65,10 @@ class LevelPage extends React.Component {
   }
 
   componentWillUpdate() {
+  }
+
+  newLevel() {
+    console.log("levelPage: new Level");
   }
 }
 

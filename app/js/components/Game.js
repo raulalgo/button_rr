@@ -4,9 +4,8 @@ import React    from 'react';
 import LevelOne from  './levels/LevelOne';
 import Button   from  './Button'
 
-class LevelFrame extends React.Component {
+class Game extends React.Component {
   counter;
-  newFamily
 
   constructor(props) {
     super(props);
@@ -18,17 +17,16 @@ class LevelFrame extends React.Component {
       currentLevel  : 0
     }
 
-    this.appendProps();
     //this.currentLevel = 0;
   }
 
   render() {
     return (
       <div>
-        Hola Level Frame
-        {this.newFamily[this.state.currentLevel]}
+        <div>Hola Game
+          {this.props.children[this.state.currentLevel]}
+        </div>
         <Button color="grey" onClick={this.next} />
-
       </div>
     )
   }
@@ -42,24 +40,13 @@ class LevelFrame extends React.Component {
       this.setState({currentLevel:1});
     }
     console.log("Current Level: " + this.state.currentLevel);
-  //  this.newLevel();
+    this.newLevel();
   }
 
   newLevel() {
-    console.log("LevelFrame: Now with the new level");
-    this.next();
+    console.log("LevelOne: Now with the new level");
 
-  }
-
-  appendProps() {
-    console.log("appendProps");
-    this.newFamily = React.Children.map(this.props.children,(child) => React.cloneElement(child, {
-        newLevel : this.newLevel
-      })
-    );
-    console.log(this.newFamily);
-    return this.newFamily;
   }
 }
 
-export default LevelFrame;
+export default Game;
