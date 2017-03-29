@@ -11,11 +11,12 @@ class LevelFrame extends React.Component {
   constructor(props) {
     super(props);
 
-    this.next = this.next.bind(this);
+    this.nextLevel = this.nextLevel.bind(this);
     this.newLevel = this.newLevel.bind(this);
 
     this.state = {
-      currentLevel  : 0
+      currentLevel  : 0,
+      frameTransition    : ""
     }
 
     this.appendProps();
@@ -24,16 +25,14 @@ class LevelFrame extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={this.state.frameTransition}>
         Hola Level Frame
         {this.newFamily[this.state.currentLevel]}
-        <Button color="grey" onClick={this.next} />
-
       </div>
     )
   }
 
-  next() {
+  nextLevel() {
     var counter = this.state.currentLevel;
     counter ++;
     if(counter > 1){
@@ -46,20 +45,32 @@ class LevelFrame extends React.Component {
   }
 
   newLevel() {
-    console.log("LevelFrame: Now with the new level");
-    this.next();
+    // fade current level out
+    this.setState({
+      frameTransition : 'fadeOut'
+    });
+    // load new level
+    // present new level in
+    setTimeout(function(){
+      this.nextLevel();
+      this.setState({ frameTransition : ''});
+    }.bind(this),1500);
+
 
   }
 
   appendProps() {
     console.log("appendProps");
     this.newFamily = React.Children.map(this.props.children,(child) => React.cloneElement(child, {
-        newLevel : this.newLevel
+        newLevel          : this.newLevel
       })
     );
-    console.log(this.newFamily);
+    //console.log(this.newFamily);
     return this.newFamily;
   }
 }
 
 export default LevelFrame;
+
+
+//         <Button color="grey" onClick={this.nextLevel} />

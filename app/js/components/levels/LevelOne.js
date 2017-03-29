@@ -46,6 +46,7 @@ class LevelOne extends React.Component {
     this.setState({
       orangeHidden  : false
     })
+
   }
 
   resolve() {
@@ -64,3 +65,4 @@ class LevelOne extends React.Component {
 }
 
 export default LevelOne;
+//

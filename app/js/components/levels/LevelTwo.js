@@ -25,7 +25,7 @@ class LevelOne extends React.Component {
   }
   render() {
     if(this.state.solved){
-      this.exitButton = <RipplerButton color="orange" transition="fall" onClick={this.nextLevel} />
+      this.exitButton = <RipplerButton color="orange" transition="fall" onClick={this.props.newLevel} />
       console.log("this.exitButton");
     } else {
       this.exitButton = ""
@@ -60,3 +60,5 @@ class LevelOne extends React.Component {
 }
 
 export default LevelOne;
+
+//
