@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import CountItem      from '../components/level_counter/CountItem'
+
 class Footer extends React.Component{
 
   constructor(props) {

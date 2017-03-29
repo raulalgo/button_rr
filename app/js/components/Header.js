@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import CountItem      from './level_counter/CountItem'
+
 class Header extends React.Component {
 
   constructor(props) {
@@ -13,7 +15,12 @@ class Header extends React.Component {
       <header>
 
         Header
-
+        <CountItem />
+        <CountItem />
+        <CountItem />
+        <CountItem />
+        <CountItem />
+        <CountItem />
       </header>
     );
   }
