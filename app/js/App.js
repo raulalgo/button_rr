@@ -18,15 +18,22 @@ const propTypes = {
 };
 
 class App extends React.Component {
+  currentLevel;
+  maxLevels;
 
   constructor(props) {
     super(props);
 
     this.onUserChange = this.onUserChange.bind(this);
+    this.pushLevel = this.pushLevel.bind(this);
 
+
+    this.maxLevels = 2
     this.state = {
-      currentUser: {}
+      currentUser: {},
+      currentLevel :  0
     };
+
   }
 
   onUserChange(err, user) {
@@ -54,7 +61,9 @@ class App extends React.Component {
     return React.cloneElement(this.props.children, {
       params: this.props.params,
       query: this.props.query,
-      currentUser: this.state.currentUser
+      currentUser: this.state.currentUser,
+      currentLevel: this.state.currentLevel,
+      pushLevel: this.pushLevel
     });
   }
 
@@ -62,7 +71,7 @@ class App extends React.Component {
     return (
       <div>
 
-        <Header />
+        <Header pushLevel={this.pushLevel} currentLevel={this.state.currentLevel} />
         {this.renderChildren()}
 
         <Footer />
@@ -71,6 +80,22 @@ class App extends React.Component {
     );
   }
 
+  pushLevel() {
+    console.log("pushing the level from app");
+
+    var tmp = this.state.currentLevel
+    tmp++;
+    if(tmp==this.maxLevels)
+    {
+      tmp=0;
+    }
+    this.setState({
+      currentLevel  : tmp
+    }, function() {
+      console.log("After pushing, the level is: " + this.state.currentLevel);
+    })
+
+  }
 }
 
 App.propTypes = propTypes;

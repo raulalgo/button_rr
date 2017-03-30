@@ -21,26 +21,32 @@ class LevelFrame extends React.Component {
 
     this.appendProps();
     //this.currentLevel = 0;
+    console.log("Bona nit, in LevelFrame the currentLevel is: " + this.props.currentLevel);
   }
 
   render() {
     return (
       <div className={this.state.frameTransition}>
         Hola Level Frame
-        {this.newFamily[this.state.currentLevel]}
+        {this.newFamily[this.props.currentLevel]}
       </div>
     )
   }
 
   nextLevel() {
-    var counter = this.state.currentLevel;
-    counter ++;
-    if(counter > 1){
-      this.setState({currentLevel:0});
-    } else {
-      this.setState({currentLevel:1});
-    }
+    // var counter = this.state.currentLevel;
+    // counter ++;
+    // if(counter > 1){
+    //   this.setState({currentLevel:0});
+    // } else {
+    //   this.setState({currentLevel:1});
+    // }
+
+    this.props.pushLevel()
+
+
     console.log("Current Level: " + this.state.currentLevel);
+
   //  this.newLevel();
   }
 

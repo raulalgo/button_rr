@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import CountItem      from './level_counter/CountItem'
+import CountWrapper      from './level_counter/CountWrapper'
 
 class Header extends React.Component {
 
@@ -14,13 +14,8 @@ class Header extends React.Component {
     return (
       <header>
 
-        Header
-        <CountItem />
-        <CountItem />
-        <CountItem />
-        <CountItem />
-        <CountItem />
-        <CountItem />
+        <div>Header</div>
+        <CountWrapper currentLevel={this.props.currentLevel} />
       </header>
     );
   }

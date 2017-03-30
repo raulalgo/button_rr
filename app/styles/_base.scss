@@ -4,3 +4,11 @@ body {
   background-color: $background--light;
   padding: $half-space;
 }
+
+.center {
+  text-align: center;
+
+  .centered {
+    display: inline-block;
+  }
+}

@@ -26,10 +26,12 @@ class LevelPage extends React.Component {
 
       this.t_w_classes = "transition_wrapper display_none"
       this.newLevel = this.newLevel.bind(this);
+      this.pushLevel = this.pushLevel.bind(this);
 
       this.setState ({clicked : this.clicked,
                       x       : 0,
                       y       : 0})
+
   }
 
   constructor(props) {
@@ -42,7 +44,7 @@ class LevelPage extends React.Component {
     return (
       <DocumentTitle title="Level">
         <section className="level-page">
-          <LevelFrame >
+          <LevelFrame currentLevel={this.props.currentLevel} pushLevel={this.pushLevel} >
             <LevelOne />
             <LevelTwo />
           </LevelFrame >
@@ -65,6 +67,11 @@ class LevelPage extends React.Component {
   }
 
   componentWillUpdate() {
+  }
+
+  pushLevel() {
+    console.log("Pushing level in LevelPage");
+    this.props.pushLevel();
   }
 
   newLevel() {
