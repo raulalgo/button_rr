@@ -8,8 +8,11 @@ import Button         from '../components/Button'
 import RipplerButton  from '../components/RipplerButton'
 import Rippler        from '../components/Rippler'
 import LevelFrame     from '../components/LevelFrame'
+
 import LevelOne       from '../components/levels/LevelOne'
 import LevelTwo       from '../components/levels/LevelTwo'
+import LevelThree     from '../components/levels/LevelThree'
+import LevelFour      from '../components/levels/LevelFour'
 
 const propTypes = {
   currentUser: React.PropTypes.object
@@ -45,8 +48,7 @@ class LevelPage extends React.Component {
       <DocumentTitle title="Level">
         <section className="level-page">
           <LevelFrame currentLevel={this.props.currentLevel} pushLevel={this.pushLevel} >
-            <LevelOne />
-            <LevelTwo />
+            <LevelFour />
           </LevelFrame >
         </section>
       </DocumentTitle>

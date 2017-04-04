@@ -1,8 +1,9 @@
 'use strict'
 
-import React          from 'react';
-import Button         from '../Button'
-import RipplerButton  from '../RipplerButton'
+import React          from  'react';
+import Button         from  '../Button'
+import RipplerButton  from  '../RipplerButton'
+import GameBoard      from  '../GameBoard'
 
 class LevelOne extends React.Component {
   transition;
@@ -31,11 +32,11 @@ class LevelOne extends React.Component {
       this.exitButton = ""
     }
     return (
-      <div>
-        <div className="height_1">
+      <div className="boardWrapper">
+        <GameBoard height="height_1 m20">
           {this.exitButton}
-        </div>
-        <Button color="green" delay="0" transition="fall" hidden={false} onClick={this.resolve} extra={this.state.extra} />
+        </GameBoard>
+        <Button color="blue" delay="0" transition="fall" hidden={false} onClick={this.resolve} extra={this.state.extra} />
       </div>
     )
   }

@@ -5,7 +5,7 @@ import React    from 'react';
 import Button   from './Button';
 import Rippler  from './Rippler';
 
-class RipplerButton extends React.Component{
+class RipplerButton extends React.Component {
   hide;
   flag;
 

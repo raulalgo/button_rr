@@ -74,7 +74,15 @@
 }
 
 .grey {
-  background-color: $background--dark;
+  background-color: $grey;
+}
+
+.red {
+  background-color: $red;
+}
+
+.white {
+  background-color: #FFF;
 }
 
 .transition_wrapper {
