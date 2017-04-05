@@ -32,6 +32,18 @@ class LevelFour extends React.Component {
         1 : this.color_array[1],
         2 : this.color_array[2],
         3 : this.color_array[3]
+      },
+      lights  : {
+        0 : false,
+        1 : false,
+        2 : false,
+        3 : false
+      },
+      active  : {
+        0 : false,
+        1 : false,
+        2 : false,
+        3 : false
       }
     }
 
@@ -43,12 +55,12 @@ class LevelFour extends React.Component {
 
       <div className="boardWrapper">
         <GameBoard height="height_4 m20">
-          <TogglerButton name="Toggler1" color={this.state.colors[0]} newLevel={this.props.newLevel} />
-          <TogglerButton name="Toggler2" color={this.state.colors[1]} newLevel={this.props.newLevel} />
-          <TogglerButton name="Toggler3" color={this.state.colors[2]} newLevel={this.props.newLevel} />
-          <TogglerButton name="Toggler4" color={this.state.colors[3]} newLevel={this.props.newLevel} />
+          <TogglerButton name="Toggler1" color={this.state.colors[0]} newLevel={this.props.newLevel} transition="fall" delay={150} lights={this.state.lights[0]} active={this.state.active[0]}/>
+          <TogglerButton name="Toggler2" color={this.state.colors[1]} newLevel={this.props.newLevel} transition="fall" delay={200} lights={this.state.lights[1]} active={this.state.active[1]}/>
+          <TogglerButton name="Toggler3" color={this.state.colors[2]} newLevel={this.props.newLevel} transition="fall" delay={250} lights={this.state.lights[2]} active={this.state.active[2]}/>
+          <TogglerButton name="Toggler4" color={this.state.colors[3]} newLevel={this.props.newLevel} transition="fall" delay={300} lights={this.state.lights[3]} active={this.state.active[3]}/>
         </GameBoard>
-        <Button color="blue" onClick={this.initiate} extra={this.state.extra} />
+        <Button color="blue" onClick={this.initiate} extra={this.state.extra} transition="fall" delay={350} />
       </div>
     )
   }
@@ -70,6 +82,18 @@ class LevelFour extends React.Component {
           1 : this.color_array[1],
           2 : this.color_array[2],
           3 : this.color_array[3]
+        },
+        lights  : {
+          0 : true,
+          1 : true,
+          2 : true,
+          3 : true
+        },
+        active  : {
+          0 : true,
+          1 : true,
+          2 : true,
+          3 : true
         }
       }, function(){
         //console.log("color 3: " + this.state.colors[3]);
