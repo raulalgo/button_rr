@@ -2,8 +2,9 @@
 
 import React    from 'react';
 
-import Button   from './Button';
-import Rippler  from './Rippler';
+import Button       from  './Button';
+import Rippler      from  './Rippler';
+import LightButton  from  './LightButton';
 
 class RipplerButton extends React.Component {
   hide;
@@ -32,7 +33,7 @@ class RipplerButton extends React.Component {
     return (
       <div >
         <Rippler x={this.state.x} y={this.state.y} t_w_classes={this.state.t_w_classes} tr_classes={this.state.tr_classes} />
-        <Button color={this.props.color} transition={this.props.transition} onClick={this.handleClick} delay={this.props.delay} hidden={this.props.hidden}/>
+        <LightButton lights={this.props.lights} color={this.props.color} transition={this.props.transition} onClick={this.handleClick} delay={this.props.delay} hidden={this.props.hidden}/>
       </div>
     );
   }

@@ -74,6 +74,7 @@ class LevelFour extends React.Component {
         this.color_array[i] = "white"
       }
       this.color_array[winner] = "orange"
+      console.log(this.color_array);
 
       this.setState({
         extra   : "deactivate",
@@ -84,12 +85,6 @@ class LevelFour extends React.Component {
           3 : this.color_array[3]
         },
         lights  : {
-          0 : true,
-          1 : true,
-          2 : true,
-          3 : true
-        },
-        active  : {
           0 : true,
           1 : true,
           2 : true,

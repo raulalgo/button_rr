@@ -51,9 +51,11 @@ class LevelPage extends React.Component {
       <DocumentTitle title="Level">
         <section className="level-page">
           <LevelFrame currentLevel={this.props.currentLevel} pushLevel={this.pushLevel} >
-
-
-              <TestLevel />
+            <LevelOne />
+            <LevelTwo />
+            <LevelThree />
+            <LevelFive />
+            <LevelFour />
           </LevelFrame >
         </section>
       </DocumentTitle>
@@ -89,7 +91,3 @@ class LevelPage extends React.Component {
 LevelPage.propTypes = propTypes;
 
 export default LevelPage;
-// <LevelOne />
-// <LevelTwo />
-// <LevelThree />
-// <LevelFive />

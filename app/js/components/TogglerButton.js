@@ -21,6 +21,7 @@ class TogglerButton extends React.Component {
     this.switchOn = this.switchOn.bind(this);
     this.activate = this.activate.bind(this);
     this.deactivate = this.deactivate.bind(this);
+    this.iWin = this.iWin.bind(this);
 
     this.exit_flag = false;
     this.toggle_flag = this.props.active
@@ -75,7 +76,7 @@ class TogglerButton extends React.Component {
 
   render() {
     if(this.props.color == "orange" && this.props.lights && this.exit_flag) {
-      this.element = <ExitButton newLevel={this.props.newLevel} />
+      this.element = <ExitButton newLevel={this.props.newLevel} lights={this.props.lights} />
     }
     else {
       this.element = <Button color={this.state.color} onClick={this.state.toggler} transition={this.props.transition} delay={this.props.delay} />
@@ -89,12 +90,30 @@ class TogglerButton extends React.Component {
 
   // Responds when new props are taken calling toggle and switch accordingly
   componentWillReceiveProps(nextProps) {
-
-    if(nextProps.lights) {
-      this.switchOn();
-    } else {
-      this.switchOff();
+    console.log(nextProps.color);
+    if(this.props.lights!=nextProps.lights) {
+      console.log("cambia luces");
+      if(nextProps.lights) {
+        this.switchOn();
+      } else {
+        this.switchOff();
+      }
     }
+    if(nextProps.color == "orange") {
+      this.setState({
+        iAmWinner : true
+      })
+
+    }
+  }
+
+  iWin() {
+    this.setState({
+      color   : "orange",
+      toggler : null,
+      active  : true,
+      iAmWinner : this.iAmWinner
+    })
   }
 
   //
@@ -107,7 +126,13 @@ class TogglerButton extends React.Component {
 
   toggle() {
     if(this.state.active) {
-      this.deactivate();
+      if(this.state.iAmWinner) {
+        this.exit_flag = true;
+        this.iWin()
+      } else {
+        this.deactivate();
+      }
+
     } else {
       this.activate();
     }

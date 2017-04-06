@@ -3,6 +3,8 @@
 import React          from  'react';
 import Button         from  '../Button';
 import TogglerButton  from  '../TogglerButton';
+import LightButton    from  '../LightButton';
+import ExitButton     from  '../ExitButton';
 
 class TestLevel extends React.Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class TestLevel extends React.Component {
     this.clicker = this.clicker.bind(this)
 
     this.state = {
-      lights  : false,
+      lights  : true,
       active  : true
     }
   }
@@ -19,7 +21,7 @@ class TestLevel extends React.Component {
   render() {
     return(
       <div className="boardWrapper">
-        <TogglerButton color="white" lights={this.state.lights} />
+        <ExitButton lights={this.state.lights} />
         <Button color="blue" onClick={this.clicker} />
       </div>
     )
@@ -27,7 +29,7 @@ class TestLevel extends React.Component {
 
   clicker() {
     this.setState({
-      lights    : true,
+      lights    : !(this.state.lights),
       active    : true
     })
   }
