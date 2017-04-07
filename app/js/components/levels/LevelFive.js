@@ -62,7 +62,7 @@ class LevelFive extends React.Component {
       if(i==this.winner) {
         elements[i] = <ExitButton newLevel={this.props.newLevel} lights={this.lights_array[i]} delay={i_delay} transition="" />
       } else {
-        elements[i] = <TogglerButton color="white" lights={this.lights_array[i]} delay={i_delay} transition="fall" />
+        elements[i] = <TogglerButton color="white" lights={this.lights_array[i]} delay={i_delay} transition="fall"/>
       }
 
     }
@@ -72,7 +72,7 @@ class LevelFive extends React.Component {
         <GameBoard height="height_4 m20">
           {elements}
         </GameBoard>
-        <Button color="blue" onClick={this.roll} extra={this.state.extra} transition="fall" delay={350} />
+        <Button color="blue" onClick={this.roll} extra={this.state.extra} transition="fall" delay={350} lights={true} />
       </div>
     )
   }

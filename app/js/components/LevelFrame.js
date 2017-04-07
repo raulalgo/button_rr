@@ -27,7 +27,6 @@ class LevelFrame extends React.Component {
   render() {
     return (
       <div className={this.state.frameTransition}>
-        Hola Level Frame
         {this.newFamily[this.props.currentLevel]}
       </div>
     )

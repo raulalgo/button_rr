@@ -60,7 +60,7 @@ class LevelFour extends React.Component {
           <TogglerButton name="Toggler3" color={this.state.colors[2]} newLevel={this.props.newLevel} transition="fall" delay={250} lights={this.state.lights[2]} active={this.state.active[2]}/>
           <TogglerButton name="Toggler4" color={this.state.colors[3]} newLevel={this.props.newLevel} transition="fall" delay={300} lights={this.state.lights[3]} active={this.state.active[3]}/>
         </GameBoard>
-        <Button color="blue" onClick={this.initiate} extra={this.state.extra} transition="fall" delay={350} />
+        <Button color="blue" onClick={this.initiate} extra={this.state.extra} transition="fall" delay={350} lights={true} />
       </div>
     )
   }

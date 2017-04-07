@@ -13,8 +13,6 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-
-        <div>Header</div>
         <CountWrapper currentLevel={this.props.currentLevel} />
       </header>
     );

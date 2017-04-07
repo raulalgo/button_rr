@@ -20,18 +20,20 @@
   border-radius: 4px;
   margin: 12px auto;
 
-  transition: box-shadow 0.1s ease;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
-
 }
 
-.button:hover {
+.button.light_on {
+  transition: box-shadow 0.1s ease;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+}
+
+.button.light_on:hover {
   transition: box-shadow 0.1s ease;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
 
-.button:active {
+.button.light_on:active {
   transition: box-shadow 0.1s ease;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
   cursor: pointer;

@@ -21,8 +21,8 @@ class TestLevel extends React.Component {
   render() {
     return(
       <div className="boardWrapper">
-        <ExitButton lights={this.state.lights} />
-        <Button color="blue" onClick={this.clicker} />
+        <LightButton lights={false} color="red" />
+        <Button color="red" lights={true} />
       </div>
     )
   }

@@ -32,7 +32,7 @@ class LevelThree extends React.Component {
         <GameBoard height="height_1 m20">
           {this.toggler}
         </GameBoard>
-        <Button color="blue" onClick={this.initiate} extra={this.state.extra} transition="fall" delay={200} />
+        <Button color="blue" onClick={this.initiate} extra={this.state.extra} transition="fall" delay={200} lights={true} />
       </div>
     );
   }

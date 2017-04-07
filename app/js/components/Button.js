@@ -4,20 +4,31 @@ import React    from 'react';
 
 class Button extends React.Component {
   transition;
+  lights;
 
   constructor(props) {
     super(props);
     this.transitionIn = this.transitionIn.bind(this)
-    this.state = {
-        transition  : "display_none",
-        show        : false
+
+
+    if(this.props.lights) {
+      this.state = {
+          transition  : "display_none",
+          show        : false,
+          shadow      : "light_on"
+      }
+    } else {
+      this.state = {
+          transition  : "display_none",
+          show        : false
+      }
     }
     //this.transition = this.props.transition
   }
 
   render() {
     return (
-         <div className={"button wide horizontal " + this.props.color + " " + this.state.transition + " " + this.props.extra} onClick={this.props.onClick} ></div>
+         <div className={"button wide horizontal " + this.props.color + " " + this.state.transition + " " + this.props.extra + " " + this.state.shadow} onClick={this.props.onClick} ></div>
     )
   }
 
@@ -34,6 +45,18 @@ class Button extends React.Component {
 
   componentWillUpdate() {
 
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.lights) {
+      this.setState({
+        shadow  : "light_on"
+      })
+    } else {
+      this.setState({
+        shadow  : ""
+      })
+    }
   }
 
   transitionIn() {

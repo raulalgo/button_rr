@@ -36,7 +36,7 @@ class LevelOne extends React.Component {
         <GameBoard height="height_1 m20">
           {this.exitButton}
         </GameBoard>
-        <Button color="blue" delay="0" transition="fall" hidden={false} onClick={this.resolve} extra={this.state.extra} />
+        <Button color="blue" delay="0" transition="fall" hidden={false} onClick={this.resolve} extra={this.state.extra} lights={true}/>
       </div>
     )
   }
