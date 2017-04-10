@@ -60,7 +60,7 @@ class LevelFive extends React.Component {
     for(var i=0; i<4 ; i++) {
       var i_delay = delay_base + (50 * i);
       if(i==this.winner) {
-        elements[i] = <ExitButton newLevel={this.props.newLevel} lights={this.lights_array[i]} delay={i_delay} transition="" />
+        elements[i] = <ExitButton newLevel={this.props.newLevel} lights={this.lights_array[i]} delay={i_delay} transition="fall" />
       } else {
         elements[i] = <TogglerButton color="white" lights={this.lights_array[i]} delay={i_delay} transition="fall"/>
       }
