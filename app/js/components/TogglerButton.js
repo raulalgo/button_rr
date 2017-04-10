@@ -79,7 +79,13 @@ class TogglerButton extends React.Component {
       this.element = <ExitButton newLevel={this.props.newLevel} lights={this.props.lights} />
     }
     else {
-      this.element = <Button color={this.state.color} onClick={this.state.toggler} transition={this.props.transition} delay={this.props.delay} lights={this.props.lights} />
+      this.element = <Button
+                        color={this.state.color}
+                        onClick={this.state.toggler}
+                        transition={this.props.transition}
+                        delay={this.props.delay}
+                        lights={this.props.lights}
+                        orientation={this.props.orientation}/>
     }
     return (
       <div>

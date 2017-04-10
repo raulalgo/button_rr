@@ -5,10 +5,17 @@ import React    from 'react';
 class Button extends React.Component {
   transition;
   lights;
+  orientation;
 
   constructor(props) {
     super(props);
     this.transitionIn = this.transitionIn.bind(this)
+
+    if (this.props.orientation != "vertical" ) {
+      this.orientation = "horizontal"
+    } else {
+      this.orientation = this.props.orientation
+    }
 
 
     if(this.props.lights) {
@@ -28,7 +35,7 @@ class Button extends React.Component {
 
   render() {
     return (
-         <div className={"button wide horizontal " + this.props.color + " " + this.state.transition + " " + this.props.extra + " " + this.state.shadow} onClick={this.props.onClick} ></div>
+         <div className={"button wide " + this.orientation + " " + this.props.color + " " + this.state.transition + " " + this.props.extra + " " + this.state.shadow} onClick={this.props.onClick} ></div>
     )
   }
 
