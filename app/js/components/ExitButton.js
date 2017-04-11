@@ -11,7 +11,13 @@ class ExitButton extends React.Component {
 
   render() {
     return (
-      <RipplerButton color="orange" transition={this.props.transition} onClick={this.props.newLevel} lights={this.props.lights} delay={this.props.delay} />
+      <RipplerButton
+        color="orange"
+        transition={this.props.transition}
+        onClick={this.props.newLevel}
+        lights={this.props.lights}
+        delay={this.props.delay}
+        orientation={this.props.orientation} />
     )
   }
 }

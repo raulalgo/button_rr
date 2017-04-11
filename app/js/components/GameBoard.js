@@ -9,7 +9,7 @@ class GameBoard extends React.Component {
 
   render() {
     return (
-      <div className={this.props.height}>
+      <div className={this.props.height + " centered"}>
         {this.props.children}
       </div>
     )

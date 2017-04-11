@@ -14,6 +14,7 @@ class LevelFive extends React.Component {
   winner;
   clicked_flag;
   roller;
+  orientation;
 
 
   constructor(props) {
@@ -51,7 +52,6 @@ class LevelFive extends React.Component {
       }
     }
 
-
   }
 
   render() {
@@ -60,16 +60,16 @@ class LevelFive extends React.Component {
     for(var i=0; i<4 ; i++) {
       var i_delay = delay_base + (50 * i);
       if(i==this.winner) {
-        elements[i] = <ExitButton newLevel={this.props.newLevel} lights={this.lights_array[i]} delay={i_delay} transition="fall" />
+        elements[i] = <ExitButton orientation={this.props.orientation} newLevel={this.props.newLevel} lights={this.lights_array[i]} delay={i_delay} transition="fall" />
       } else {
-        elements[i] = <TogglerButton color="white" lights={this.lights_array[i]} delay={i_delay} transition="fall"/>
+        elements[i] = <TogglerButton orientation={this.props.orientation} color="white" lights={this.lights_array[i]} delay={i_delay} transition="fall"/>
       }
 
     }
     return(
 
-      <div className="boardWrapper">
-        <GameBoard height="height_4 m20">
+      <div className="boardWrapper center">
+        <GameBoard height="height_4">
           {elements}
         </GameBoard>
         <Button color="blue" onClick={this.roll} extra={this.state.extra} transition="fall" delay={350} lights={true} />

@@ -10,5 +10,10 @@ body {
 
   .centered {
     display: inline-block;
+
+    .vertical_object {
+      display: inline-block;
+      margin: 0 8px;
+    }
   }
 }

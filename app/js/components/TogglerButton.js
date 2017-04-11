@@ -12,6 +12,7 @@ class TogglerButton extends React.Component {
   lights;
   active;
   iAmWinner;
+  inBl;
 
   element;
 
@@ -51,6 +52,12 @@ class TogglerButton extends React.Component {
       }
     }
 
+    if(this.props.orientation =="vertical") {
+      this.inBl = " vertical_object"
+    } else {
+      this.inBl = ""
+    }
+
     // if (this.props.lights) {
     //   if(this.props.active) {
     //     this.state = {
@@ -76,7 +83,10 @@ class TogglerButton extends React.Component {
 
   render() {
     if(this.props.color == "orange" && this.props.lights && this.exit_flag) {
-      this.element = <ExitButton newLevel={this.props.newLevel} lights={this.props.lights} />
+      this.element = <ExitButton
+                        newLevel={this.props.newLevel}
+                        lights={this.props.lights}
+                        orientation = {this.props.orientation} />
     }
     else {
       this.element = <Button
@@ -85,10 +95,11 @@ class TogglerButton extends React.Component {
                         transition={this.props.transition}
                         delay={this.props.delay}
                         lights={this.props.lights}
-                        orientation={this.props.orientation}/>
+                        orientation={this.props.orientation}
+                        />
     }
     return (
-      <div>
+      <div className={this.inBl}>
         {this.element}
       </div>
     );

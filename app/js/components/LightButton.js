@@ -25,7 +25,15 @@ class LightButton extends React.Component {
 
   render() {
     return (
-      <Button color={this.state.color} transition={this.props.transition} extra={this.props.extra} onClick={this.state.onClick} hidden={this.props.hidden} delay={this.props.delay} lights={this.props.lights} />
+      <Button
+        color={this.state.color}
+        transition={this.props.transition}
+        extra={this.props.extra}
+        onClick={this.state.onClick}
+        hidden={this.props.hidden}
+        delay={this.props.delay}
+        lights={this.props.lights}
+        orientation={this.props.orientation} />
     )
   }
 
