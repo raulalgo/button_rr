@@ -18,7 +18,7 @@ class LevelSix extends React.Component {
 
   render() {
     return(
-      <LevelFive orientation="vertical"/>
+      <LevelFive orientation="vertical" newLevel={this.props.newLevel}/>
     )
   }
 }

@@ -69,7 +69,7 @@ class LevelFive extends React.Component {
     return(
 
       <div className="boardWrapper center">
-        <GameBoard height="height_4">
+        <GameBoard height="">
           {elements}
         </GameBoard>
         <Button color="blue" onClick={this.roll} extra={this.state.extra} transition="fall" delay={350} lights={true} />

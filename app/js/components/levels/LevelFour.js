@@ -53,12 +53,12 @@ class LevelFour extends React.Component {
   render() {
     return(
 
-      <div className="boardWrapper">
-        <GameBoard height="height_4 m20">
-          <TogglerButton name="Toggler1" color={this.state.colors[0]} newLevel={this.props.newLevel} transition="fall" delay={150} lights={this.state.lights[0]} active={this.state.active[0]}/>
-          <TogglerButton name="Toggler2" color={this.state.colors[1]} newLevel={this.props.newLevel} transition="fall" delay={200} lights={this.state.lights[1]} active={this.state.active[1]}/>
-          <TogglerButton name="Toggler3" color={this.state.colors[2]} newLevel={this.props.newLevel} transition="fall" delay={250} lights={this.state.lights[2]} active={this.state.active[2]}/>
-          <TogglerButton name="Toggler4" color={this.state.colors[3]} newLevel={this.props.newLevel} transition="fall" delay={300} lights={this.state.lights[3]} active={this.state.active[3]}/>
+      <div className="boardWrapper center">
+        <GameBoard height="">
+          <TogglerButton name="Toggler1" color={this.state.colors[0]} newLevel={this.props.newLevel} transition="fall" delay={150} lights={this.state.lights[0]} active={this.state.active[0]} orientation={this.props.orientation} />
+          <TogglerButton name="Toggler2" color={this.state.colors[1]} newLevel={this.props.newLevel} transition="fall" delay={200} lights={this.state.lights[1]} active={this.state.active[1]} orientation={this.props.orientation} />
+          <TogglerButton name="Toggler3" color={this.state.colors[2]} newLevel={this.props.newLevel} transition="fall" delay={250} lights={this.state.lights[2]} active={this.state.active[2]} orientation={this.props.orientation} />
+          <TogglerButton name="Toggler4" color={this.state.colors[3]} newLevel={this.props.newLevel} transition="fall" delay={300} lights={this.state.lights[3]} active={this.state.active[3]} orientation={this.props.orientation} />
         </GameBoard>
         <Button color="blue" onClick={this.initiate} extra={this.state.extra} transition="fall" delay={350} lights={true} />
       </div>

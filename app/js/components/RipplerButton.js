@@ -18,6 +18,11 @@ class RipplerButton extends React.Component {
     //this.state.t_w_classes = "transition_wrapper display_none"
     //this.state.tr_classes = "";
 
+    if(this.props.orientation =="vertical") {
+      this.inBl = " vertical_object"
+    } else {
+      this.inBl = ""
+    }
 
 
     this.state = {
@@ -34,7 +39,7 @@ class RipplerButton extends React.Component {
   render() {
 
     return (
-      <div >
+      <div className={this.inBl} >
         <Rippler x={this.state.x} y={this.state.y} t_w_classes={this.state.t_w_classes} tr_classes={this.state.tr_classes} />
         <LightButton
             lights={this.props.lights}

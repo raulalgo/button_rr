@@ -15,6 +15,7 @@ import LevelThree     from  '../components/levels/LevelThree'
 import LevelFour      from  '../components/levels/LevelFour'
 import LevelFive      from  '../components/levels/LevelFive'
 import LevelSix       from  '../components/levels/LevelSix'
+import LevelSeven     from  '../components/levels/LevelSeven'
 
 import TestLevel      from  '../components/levels/TestLevel'
 
@@ -52,7 +53,14 @@ class LevelPage extends React.Component {
       <DocumentTitle title="Level">
         <section className="level-page">
           <LevelFrame currentLevel={this.props.currentLevel} pushLevel={this.pushLevel} >
+            <LevelOne />
+            <LevelTwo />
+            <LevelThree />
+            <LevelFive />
+            <LevelFour />
             <LevelSix />
+            <LevelSeven />
+
           </LevelFrame >
         </section>
       </DocumentTitle>
@@ -88,9 +96,3 @@ class LevelPage extends React.Component {
 LevelPage.propTypes = propTypes;
 
 export default LevelPage;
-
-// <LevelOne />
-// <LevelTwo />
-// <LevelThree />
-// <LevelFive />
-// <LevelFour />

@@ -28,7 +28,7 @@ class App extends React.Component {
     this.pushLevel = this.pushLevel.bind(this);
 
 
-    this.maxLevels = 5
+    this.maxLevels = 7
     this.state = {
       currentUser: {},
       currentLevel :  0
